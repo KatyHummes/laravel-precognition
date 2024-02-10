@@ -22,11 +22,11 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-        'name' => 'required|string',
-        'creation' => 'required|date',
-        'phone' => 'required|string',
-        'corescolhida' => 'required|string',
-        'gender' => 'required|string',
+            'name' => 'required|string',
+            'creation' => 'required|date',
+            'phone' => 'required|string',
+            'color' => ['required', 'regex:/^#([a-fA-F0-9]{6})$/'],
+            'gender' => 'required|string',
         ];
     }
 
@@ -36,6 +36,6 @@ class ProductRequest extends FormRequest
             'required' => 'Este campo é obrigatório',
             'string' => 'Este campo deve ter no máximo 255 caracteres',
             'date' => 'O campo data é obrigatório',
-            ];
+        ];
     }
 }

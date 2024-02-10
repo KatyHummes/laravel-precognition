@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('creation');
             $table->string('phone');
-            $table->string('corescolhida');
+            $table->string('color');
             $table->string('gender');
             $table->string('file');
             $table->timestamps();

@@ -18,13 +18,15 @@ class HomeController extends Controller
 
     public function store(ProductRequest $request)
     {
+        // dd($request->all());
+
         Product::create([
             'name' => $request['name'],
             'creation' => $request['creation'],
             'phone' => $request['phone'],
-            'corescolhida' => $request['corescolhida'],
+            'color' => $request['color'],
             'gender' => $request['gender'],
-            'file' => $request['file']
+            'file' => $request['file'] ?? 'default_value',
         ]);
     }
 }
